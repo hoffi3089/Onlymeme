@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #C8E3FF;
+    --light-background: #f0ffff;
+    --dark-background: #5F99AB;
+    --foreground: #fff;
+    --primary: #2423E9;
+    --light-primary: #C8E3FF;
+    --dark-primary: #04016B;
+    --hover-primary: #7e8fa1;
+    --secondary: #F4513E;
+    --dark-secondary: #820000;
+    --light-secondary: #FACCA9;
+    --hover-secondary: #bd9a7f;
+    --tertiary: #278020;
+    --light-tertiary: #9ECC60;
+    --bright-tertiary: #F8FFF0;
+    --dark-tertiary: #1B6600;
+    --hover-tertiary: #7fa34d;
+    --custom-gray: #4D4D4D; /* #7d7e80; */
+    --gray-background: #CCCCCC;
+    --text: #000; 
+  }
+}
+
+* {
+  scroll-behavior: smooth;
+  transition: all 0.3s;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 450;
+  line-height: 1.3;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.card:hover .underline-text {
+  text-decoration: underline;
+  color: var(--primary);
+}
+
+*::-webkit-scrollbar {
+	position: absolute;
+	width: 8px;
+	height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+	background: #cdcdcd;
+}
+
+*::-webkit-scrollbar-thumb {
+	background: #aaa;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+	background: #888;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.container {
+  max-width: 1800px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.trading-view {
+  height: 500px !important;
+}
+
+.trading-view .tradingview-widget-copyright {
+  display: none;
+}
+
+.custom-checkbox {
+  position: relative;
+  cursor: pointer;
+  font-size: 12px;
+  width: 1.3em;
+  height: 1.3em;
+  border-radius: 50%;
+  user-select: none;
+  border: 2px solid black;
+  display: block;
+  background-color: white;
+}
+
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.custom-checkbox .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.custom-checkbox .checkmark:after {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  background-color: black;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 100ms ease;
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+  transform: scale(1);
+}
